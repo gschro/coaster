@@ -15,6 +15,10 @@ class AttractionSchema extends Schema {
       table.string('make', 50)
       table.integer('inversions')
       table.integer('user_favorites')
+      table.integer('height')
+      table.integer('length')
+      table.boolean('defunct')
+      table.date('defunct_date')
       table.timestamps()
     })
   }

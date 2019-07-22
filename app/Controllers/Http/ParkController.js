@@ -1,5 +1,6 @@
 'use strict'
 const Park = use('App/Models/Park')
+//const Logger = use('Logger')
 
 /** @typedef {import('@adonisjs/framework/src/Request')} Request */
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
@@ -20,7 +21,8 @@ class ParkController {
    */
   async index ({ request, response, view }) {
     const parks = await Park.all()
-    response.send(parks)
+    console.log(JSON.stringify(parks))
+    return view.render('Park.parks', { parks: parks.toJSON() })
   }
 
   /**
@@ -56,6 +58,9 @@ class ParkController {
    * @param {View} ctx.view
    */
   async show ({ params, request, response, view }) {
+    const park = await Park.query().with('attractions').where('id', params.id).setHidden(['id','created_at','updated_at','slug']).firstOrFail()
+    console.log(park.toJSON())
+    return view.render('Park.park', { park: park.toJSON() })
   }
 
   /**

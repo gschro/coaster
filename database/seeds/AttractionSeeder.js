@@ -2,7 +2,7 @@
 
 /*
 |--------------------------------------------------------------------------
-| UserSeeder
+| AttractionSeeder
 |--------------------------------------------------------------------------
 |
 | Make use of the Factory instance to seed database with dummy data or
@@ -14,12 +14,12 @@
 const Factory = use('Factory')
 const Database = use('Database')
 
-class UserSeeder {
+class AttractionSeeder {
   static async run () {
-    console.log('running user')
-    await Factory.model('App/Models/User').createMany(5);
-    console.log('users finished')
+    console.log('running attraction')
+    await Factory.model('App/Models/Attraction').createMany(20);
+    console.log('attraction finished')
   }
 }
 
-module.exports = UserSeeder
+module.exports = AttractionSeeder

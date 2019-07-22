@@ -1,0 +1,9 @@
+@layout('master_layout')
+
+@section('content')
+<div class="alert alert-warning">testing links it out!</div>
+Park count: {{ parks.length }}
+<ul class="list-group">
+    @!each(park in parks, include="Park.park_list")
+</ul>
+@endsection

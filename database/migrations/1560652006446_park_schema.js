@@ -14,6 +14,7 @@ class ParkSchema extends Schema {
       table.string('metro', 50)
       table.string('airport', 50)
       table.string('family', 50)
+      table.string('slug', 50)
       table.timestamps()
     })
   }

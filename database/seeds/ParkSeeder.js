@@ -15,8 +15,10 @@ const Factory = use('Factory')
 const Database = use('Database')
 
 class ParkSeeder {
-  async run () {
-    await Factory.model('App/Models/Park').createMany(3);
+  static async run () {
+    console.log('running park')
+    const parks = await Factory.model('App/Models/Park').createMany(3);
+    console.log('finished park')
   }
 }
 

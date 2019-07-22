@@ -23,7 +23,7 @@ Factory.blueprint('App/Models/User', async (faker) => {
     first: faker.first(),
     last: faker.last()
   }
-});
+})
 
 Factory.blueprint('App/Models/Park', async (faker) => {
     return {
@@ -33,6 +33,22 @@ Factory.blueprint('App/Models/Park', async (faker) => {
       city: faker.city(),
       metro: faker.city(),
       airport: faker.city(),
-      family: faker.word()
+      family: faker.word(),
+      slug: faker.word()
     }
-  })
+})
+
+Factory.blueprint('App/Models/Attraction', async (faker) => {
+  return {
+    name: faker.name(),
+    type: faker.word(),
+    park_id: 1,
+    make: faker.word(),
+    inversions: 1,
+    user_favorites: 0,
+    height: '200',
+    length: '300',
+    defunct: false,
+    defunct_date: null
+  }
+})

@@ -17,5 +17,5 @@
 const Route = use('Route')
 
 Route.on('/').render('welcome')
-Route.get('parks', 'ParkController.index')
+Route.resource('parks', 'ParkController')
 Route.resource('attractions', 'AttractionController')

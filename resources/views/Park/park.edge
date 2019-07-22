@@ -1,0 +1,21 @@
+@layout('master_layout')
+
+@section('content')
+<div class="alert alert-warning">Park Found!</div>
+
+Park Name: {{ park.name }}
+<ul>
+@each((value, name) in park)
+    @unless(name == 'attractions')
+    <li>{{ name }}: {{ value }}</li>
+    @endunless
+@endeach
+</ul>
+
+Attractions:
+<ul>
+@each(attraction in park.attractions)
+    <li>{{ attraction.name }}</li>
+@endeach
+</ul>
+@endsection
